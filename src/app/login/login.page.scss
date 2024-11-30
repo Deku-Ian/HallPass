@@ -1,9 +1,11 @@
+/* Override default text color for the login page */
 ion-content {
     --background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.1)),
     url("/assets/bg.jpg") no-repeat center center / cover;
+    background-size: cover; /* Ensure the image covers the whole area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
 }
-
-
 
 .login-section {
     height: 80vh;
@@ -18,27 +20,33 @@ ion-content {
     border-top-left-radius: 46px;
     border-top-right-radius: 46px;
 
-    .heading{
+    .heading {
         margin-top: 20px;
-        h1{
+        
+        /* Make sure heading and description are properly visible */
+        h1 {
             font-size: 1.6rem;
             font-weight: bolder;
+            color: #ffffff;  /* White text color */
         }
-        p{
+        p {
             margin-top: 20px;
             font-size: 1rem;
-            color: #7b7b7b;
+            color: #b4b4b4;  /* Light gray for the description */
         }
     }
-    .login-form{
-        .form-input{
+
+    .login-form {
+        .form-input {
             position: relative;
             margin-bottom: 10px;
+
+            /* Remove padding-left and handle icon placement */
             ion-item::part(native) {
                 padding-left: 0;
             }
 
-            ion-icon{
+            ion-icon {
                 color: #fff;
                 position: inherit;
                 top: 37px;
@@ -46,38 +54,45 @@ ion-content {
                 font-size: 1.2rem;
                 left: 5px;
             }
-            ion-label{
+
+            ion-label {
                 position: absolute;
                 margin-left: 35px;
                 font-weight: bolder;
                 font-size: 0.8rem;
                 top: 3px;
-                color: #b4b4b4;
+                color: #b4b4b4;  /* Light gray for labels */
             }
 
-            ion-input{
+            /* Keep input text black and provide appropriate padding */
+            ion-input {
                 font-size: 0.9rem;
                 --padding-start: 36px;
                 --padding-top: 36px;
-                color: #fff;
+                color: #000;  /* Black text color for inputs */
             }
         }
     }
-    .action-buttons{
+
+    .action-buttons {
         text-align: center;
-        .login-button{
+
+        /* Adjust login button */
+        .login-button {
             --background: #f9b801;
             width: 100%;
             font-weight: bold;
         }
-        p{
+
+        p {
             margin-top: 15px;
             font-size: 1rem;
-            color: #7b7b7b;
+            color: #7b7b7b;  /* Light gray color for "Forgot password?" text */
         }
-        .signup-button{
+
+        .signup-button {
             --border-color: #b4b4b4;
-            -color: #000;
+            color: #007bff;  /* Blue color for SignUp button text */
             font-weight: bold;
             margin-top: 30px;
             width: 100%;

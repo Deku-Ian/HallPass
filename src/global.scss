@@ -35,3 +35,59 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Global styles for the header across all pages */
+/* Global styles for the header across all pages */
+ion-header {
+    --background: #1f3d70; /* Dark blue background for the header */
+  }
+  
+  ion-toolbar {
+    --background: #1f3d70; /* Dark blue background for the toolbar */
+    --color: white; /* White text for all toolbar items */
+  }
+  
+  ion-title {
+    color: white; /* White color for the title text */
+  }
+  /* Style the menu items */
+  ion-menu {
+    --background: white; /* White background for the menu */
+  }
+  
+  ion-item {
+    --background: white; /* White background for items in the menu */
+    --color: #4361ee; /* Blue text for menu items */
+  }
+  
+  /* Optionally add hover effects for menu items */
+  ion-item:hover {
+    background-color: #f0f0f0; /* Light grey hover effect */
+  }
+  
+  /* For the icon inside the menu, make sure it has the same color as the text */
+  ion-icon {
+    color: #4361ee; /* Blue icon */
+  }
+  
+  /* Optional: style the menu when it's opened */
+  ion-menu[side="end"] {
+    --background: white; /* White background on the end menu */
+  }
+  
+  /* Set the background for ion-content */
+  ion-content {
+    --background: white; /* White background for all content areas */
+    --color: #4361ee; /* Blue text for content, if needed */
+  }
+  
+  /* Ensure full page background is white */
+  ion-page {
+    --background: white; /* White background for the entire page */
+  }
+  
+  /* Optional: Add a small margin to content for better layout */
+  ion-content {
+    padding: 10px;
+  }
+  

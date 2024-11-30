@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { environment } from 'src/environments/environment';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
 
   // Initialize Firebase
@@ -16,11 +18,21 @@ export class LoginPage implements OnInit {
   // Initialize Firebase Authentication and get a reference to the service
   oAuth = getAuth(this.oApp);
 
-  gEmail = ""
-  gPassword = ""
-  constructor() { }
+  gEmail = "";
+  gPassword = "";
 
-  ngOnInit() {
+  constructor(private menuCtrl: MenuController) { }
+
+  ngOnInit() {}
+
+  // Disable the menu when the login page is entered
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false); // Disable menu
+  }
+
+  // Re-enable the menu when leaving the login page
+  ionViewWillLeave() {
+    this.menuCtrl.enable(true); // Re-enable menu
   }
 
   loginUser() {
@@ -29,14 +41,13 @@ export class LoginPage implements OnInit {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
-        // ...
+        // Navigate to the map page or handle further logic
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode)
-        console.log(errorMessage)
+        console.log(errorCode);
+        console.log(errorMessage);
       });
   }
-
 }
