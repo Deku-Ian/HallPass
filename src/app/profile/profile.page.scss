@@ -1,0 +1,38 @@
+/* Set the background color to white for the profile page */
+ion-content {
+    --background: white; /* Set the background to white */
+  }
+  
+  /* Set the text color to blue globally on the page */
+  .profile-container {
+    padding: 16px;
+    text-align: left;
+  }
+  
+  /* Change color of the text inside ion-item (email, course, etc.) */
+  ion-item {
+    --background: white; /* White background for items */
+    --color: #4361ee; /* Blue text color */
+    margin-bottom: 15px; /* Optional: Adds spacing between items */
+  }
+  
+  /* Optional: Style for labels within ion-item */
+  ion-item ion-label {
+    color: #4361ee; /* Blue text for labels */
+  }
+  
+  /* Make sure the text inside the card is blue */
+  ion-card-title, ion-card-content {
+    color: #4361ee; /* Blue text */
+  }
+  
+  /* If you are using ion-cards, make sure they have white background */
+  ion-card {
+    background-color: white; /* Ensure card background is white */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for the card */
+  }
+  
+  ion-card-header {
+    background-color: #f2f6fc; /* Light blueish background for the card header */
+  }
+  

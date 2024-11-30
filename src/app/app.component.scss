@@ -1,0 +1,21 @@
+/* Style the ion-list in the side menu */
+ion-menu {
+    --background: #ffffff;  /* White background for the entire menu */
+  }
+  
+  ion-list {
+    --background: #ffffff;  /* White background for the list */
+    --color: #0000ff;        /* Blue text color */
+  }
+  
+  ion-item {
+    --background: #ffffff;  /* White background for each item */
+    --color: #0000ff;        /* Blue text color for each item */
+  }
+  
+  /* You can also customize the active or selected ion-item */
+  ion-item[selected] {
+    --background: #e0e0e0;  /* Light gray background for selected items */
+    --color: #0000ff;        /* Blue text color */
+  }
+  

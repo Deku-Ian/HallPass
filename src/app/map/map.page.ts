@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
-
+import { MenuController } from '@ionic/angular'; // Import MenuController
 
 @Component({
   selector: 'app-map',
@@ -9,6 +9,8 @@ import * as L from 'leaflet';
 })
 export class MapPage implements AfterViewInit {
   map!: L.Map;
+
+  constructor(private menuCtrl: MenuController) {} // Inject MenuController
 
   ngAfterViewInit(): void {
     this.initMap();
@@ -32,7 +34,7 @@ export class MapPage implements AfterViewInit {
       [17.659194, 121.752589], // Midpoint
       [17.658734, 121.753474], // Endpoint
     ];
-    
+
     L.polyline(pathCoordinates, {
       color: 'blue',
       weight: 5, // Line thickness
@@ -40,7 +42,6 @@ export class MapPage implements AfterViewInit {
       dashArray: '5, 10', // Dashed style
     }).addTo(this.map)
       .bindPopup('Route to Library');
-    
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
@@ -48,7 +49,11 @@ export class MapPage implements AfterViewInit {
 
     L.marker([17.659282, 121.752497], {icon: customIcon}) // Replace with coordinates
       .addTo(this.map)
-      .bindPopup('center').closePopup
-      // .bindTooltip('Library Tooltip', { permanent: true, direction: 'top' });
+      .bindPopup('Center').closePopup
+  }
+
+  // Close the menu when the page is entered
+  ionViewWillEnter() {
+    this.menuCtrl.close(); // Close the menu
   }
 }

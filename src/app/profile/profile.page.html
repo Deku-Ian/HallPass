@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Move the burger menu to the right side using slot="end" -->
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Personal Information</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Email:</ion-label>
+          <ion-text>{{ userEmail }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Username:</ion-label>
+          <ion-text>{{ userName }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Course:</ion-label>
+          <ion-text>{{ userCourse }}</ion-text>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
