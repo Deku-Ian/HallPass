@@ -50,7 +50,7 @@
     <ion-grid>
       <ion-row>
         <ion-col size="6" *ngFor="let college of filteredData.colleges">
-          <ion-card class="rounded-card">
+          <ion-card class="rounded-card" (click)="navigateToMap(college)">
             <img [src]="college.imageUrl" [alt]="college.name" class="rounded-image" />
             <ion-card-header>
               <ion-card-title>{{ college.name }}</ion-card-title>
@@ -67,7 +67,7 @@
     <ion-grid>
       <ion-row>
         <ion-col size="6" *ngFor="let utility of filteredData.utilities">
-          <ion-card class="rounded-card">
+          <ion-card class="rounded-card" (click)="navigateToMap(utility)">
             <img [src]="utility.imageUrl" [alt]="utility.name" class="rounded-image" />
             <ion-card-header>
               <ion-card-title>{{ utility.name }}</ion-card-title>

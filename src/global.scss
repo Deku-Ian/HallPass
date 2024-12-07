@@ -206,4 +206,15 @@ ion-tab-button.active ion-icon {
 }
 :root.md{
   --ion-card-background: #ffffff !important;
+  --ion-background-color: #ffffff;
+  --ion-text-color: #701f1f;
 }
+.alert-button-inner.sc-ion-alert-md {
+  color: #701f1f;
+}
+/* map.page.scss */
+
+/* Customizing the overall .leaflet-bar container */
+
+
+/* Custom style for the zoom control button icons */
