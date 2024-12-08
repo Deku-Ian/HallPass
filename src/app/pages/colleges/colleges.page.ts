@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy  } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { ProfileMenuComponent } from '../../profile-menu/profile-menu.component';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { environment } from '../../../environments/environment';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-colleges',
   templateUrl: './colleges.page.html',
   styleUrls: ['./colleges.page.scss'],
 })
-export class CollegesPage {
+export class CollegesPage implements OnInit, OnDestroy {
+  username: string = 'Student';
+  userProfile: any = null;
+  private userSubscription: Subscription | null = null;
+  
   colleges = [
     { name: 'College of Human Kinetics', imageUrl: '../../../assets/images/college pics/CHK/chk.png', latitude: 17.65969753458836, longitude: 121.75385386219797 },
     { name: 'College of Information and Computing Sciences', imageUrl: '../../../assets/images/college pics/CICS/cics.png', latitude: 17.65760121521207, longitude: 121.75234347337498 },
@@ -33,8 +41,28 @@ export class CollegesPage {
   filteredData = { colleges: [...this.colleges], utilities: [...this.utilities] };
   menuVisible = false;
 
-  constructor(private popoverController: PopoverController, private router: Router) {}
+  constructor(private popoverController: PopoverController, private router: Router, private userService: UserService) {}
 
+ngOnInit() {
+    this.userSubscription = this.userService.getUserProfile().subscribe(
+      (user) => {
+        if (user) {
+          this.username = user.username || 'Student';
+          this.userProfile = user;
+        }
+      },
+      (error) => {
+        console.error('Error fetching user profile', error);
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    if (this.userSubscription) {
+      this.userSubscription.unsubscribe();
+    }
+  }
+  
   toggleMenu() {
     this.menuVisible = !this.menuVisible;
   }

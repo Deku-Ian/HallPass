@@ -34,7 +34,7 @@ const routes: Routes = [
   // Catch-all route
   {
     path: '**',
-    redirectTo: 'colleges'  // Changed from 'home' to 'colleges'
+    redirectTo: 'login'  // Changed from 'home' to 'colleges'
   }
 ];
 

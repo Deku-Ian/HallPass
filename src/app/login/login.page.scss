@@ -45,6 +45,21 @@ ion-content {
             ion-item::part(native) {
                 padding-left: 0;
             }
+            ion-item {
+                position: relative;
+                
+                .password-toggle {
+                  position: absolute;
+                  right: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  
+                  ion-icon {
+                    color: #701f1f;
+                    font-size: 1.2rem;
+                  }
+                }
+              }
 
             ion-icon {
                 color: #701f1f;
@@ -73,6 +88,7 @@ ion-content {
             }
         }
     }
+/* login.page.scss */
 
     .action-buttons {
         text-align: center;
